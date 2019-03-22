@@ -1,3 +1,6 @@
+Note to self: Don't forget to add your own firebaseconfig file for firebase authentication to work. 
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
