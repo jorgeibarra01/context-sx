@@ -12,7 +12,7 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import withStyles from '@material-ui/core/styles/withStyles';
 import {UserLoginContext} from './UserLoginContext'; 
-import firebase from '../../utils/firebaseconfig'
+// import firebase from '../../utils/firebaseconfig'
 
 
 const styles = theme => ({
@@ -75,7 +75,7 @@ function Login(props) {
         isLoggedIn,); 
   }
   const handleSubmit = async () => { 
-        let profile = await firebase.auth().signInWithEmailAndPassword(email, password).then(creds => handleSignIn(creds.user)).catch( error => console.log('Error Signing In', error)); 
+        // let profile = await firebase.auth().signInWithEmailAndPassword(email, password).then(creds => handleSignIn(creds.user)).catch( error => console.log('Error Signing In', error)); 
     }
   return (
     <main className={classes.main}>

@@ -3,7 +3,7 @@ import {UserLogin} from './UserLoginContext'
 import Login from './Login'
 
 export const Layout = (props) => {
-    console.log('layout props', props)
+    // console.log('layout props', props)
     return (
         <UserLogin>
             <Login /> 

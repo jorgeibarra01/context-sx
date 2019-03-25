@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 export const UserLoginContext = React.createContext();
 
 export const UserLogin = ({props, children}) => { 
-    console.log('UserLogin', props); 
+    // console.log('UserLogin', props); 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [displayName, setDisplayName] = useState('')

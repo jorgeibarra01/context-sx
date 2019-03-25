@@ -1,9 +1,10 @@
-var firebase = require('firebase'); 
-  var config = {
-    apiKey: "<API_KEY>",
-    authDomain: "<PROJECT_ID>.firebaseapp.com",
-    databaseURL: "https://<DATABASE_NAME>.firebaseio.com",
-    storageBucket: "<BUCKET>.appspot.com",
-  };
-firebase.initializeApp(config); 
-  module.exports = firebase; 
+module.exports = {
+  firebaseConfig: {
+    apiKey: "AIzaSyAhvBTFZJmXhkKgTT0fQoswI-hw2zC8tM0",
+    authDomain: "sandbox-39e00.firebaseapp.com",
+    databaseURL: "https://sandbox-39e00.firebaseio.com",
+    projectId: "sandbox-39e00",
+    storageBucket: "sandbox-39e00.appspot.com",
+    messagingSenderId: "283581058693"
+  }
+}  
