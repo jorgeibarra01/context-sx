@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 // import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
@@ -11,7 +11,6 @@ import InputLabel from '@material-ui/core/InputLabel';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import withStyles from '@material-ui/core/styles/withStyles';
-import {UserLoginContext} from './UserLoginContext'; 
 // import firebase from '../../utils/firebaseconfig'
 
 
@@ -48,34 +47,17 @@ const styles = theme => ({
 });
 
 function Login(props) {
-    
-  const {email, setEmail, password, setPassword,
-    displayName, setDisplayName,
-    phoneNumber, setPhoneNumber,
-    photoURL, setPhotoURL,
-    uid, setUID,
-    emailVerified, setEmailVerified,
-    isLoggedIn, setIsLoggedIn } = useContext(UserLoginContext); 
+  const [ email, setEmail ]  = useState(''); 
+  const [ password, setPassword ] = useState(''); 
+    console.log('firebase', props)
+  const {signInEmailAndPassword } = props.firebase; 
   const { classes } = props;
 
-
-  const handleSignIn = (user) => { 
-    setPassword('')
-    setDisplayName(user.displayName)
-    setPhoneNumber(user.phoneNumber)
-    setPhotoURL(user.photoURL)
-    setUID(user.uid)
-    setEmailVerified(user.emailVerified)
-    setIsLoggedIn(true)
-    console.log( displayName,
-        phoneNumber,
-        photoURL,
-        uid,
-        emailVerified,
-        isLoggedIn,); 
-  }
   const handleSubmit = async () => { 
-        // let profile = await firebase.auth().signInWithEmailAndPassword(email, password).then(creds => handleSignIn(creds.user)).catch( error => console.log('Error Signing In', error)); 
+      signInEmailAndPassword(email, password).then(bleh=>{ 
+        props.firebase.setLoggedIn(); 
+        props.history.push('/test')
+      }).catch( error => console.log('Error Signing In', error)); 
     }
   return (
     <main className={classes.main}>

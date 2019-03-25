@@ -1,16 +1,13 @@
-import React, {useContext} from 'react'
-// import {FBContext} from '../../context/fbContext'
-import {FirebaseConsumer} from '../../context/fbContext'
-import SamplePage2 from './SamplePage2'
+import React from 'react'
+
 export default props => {
-    // const {message} = useContext(FBContext); 
-    console.log('props: ', props); 
+    console.log('props:sasdf ', props.firebase); 
   return (
     <div>
-      <FirebaseConsumer> 
-        <h1> Sample Page2: Test. </h1> 
-        {/* <SamplePage2 />  */}
-      </FirebaseConsumer>
+        <h1> Sample Page: Test. </h1> 
+        <button onClick={() => {
+          props.firebase.signOut()
+          }}> Sign Out</button>
     </div>
   )
 }

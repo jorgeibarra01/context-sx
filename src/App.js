@@ -1,18 +1,16 @@
-import React, { Component, useContext } from 'react';
-import {Layout} from './pages/Login/Layout'
+import React from 'react';
 import { Link } from "react-router-dom";
-// import {FirebaseConsumer} from '../src/context/fbContext'
-// import {FBContext} from '../src/context/fbContext'
+import {FirebaseConsumer} from './context/fbContext'
+import Login from './pages/Login/Login'
 
 export default props => { 
-    // const {setMessage, isLoading, setIsLoading} = useContext(FBContext);
     console.log('props', props); 
     return (
       <div>
-        <Layout/> 
+        <FirebaseLogin {...props}/> 
         <Link to={'/test'}> <button onClick={() => {}}> Link To Test Page </button></Link> 
-        {/* <button onClick ={() => setIsLoading(!isLoading)}> Is Loading </button> */}
       </div>
     );
 }
 
+const FirebaseLogin = FirebaseConsumer(Login);

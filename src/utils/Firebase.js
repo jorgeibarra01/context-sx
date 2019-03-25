@@ -1,12 +1,4 @@
-// const { firebaseConfig } = require('./firebaseconfig')
-const firebaseConfig = {
-    apiKey: "AIzaSyAhvBTFZJmXhkKgTT0fQoswI-hw2zC8tM0",
-    authDomain: "sandbox-39e00.firebaseapp.com",
-    databaseURL: "https://sandbox-39e00.firebaseio.com",
-    projectId: "sandbox-39e00",
-    storageBucket: "sandbox-39e00.appspot.com",
-    messagingSenderId: "283581058693"
-  }
+const { firebaseConfig } = require('./firebaseconfig')
 class Firebase {
    constructor() {
        this.app = null;
@@ -39,7 +31,7 @@ class Firebase {
            cb(token);
        })
 
-   _signInFirebaseEmailAndPassword = async ({email,password}) =>
+   _signInFirebaseEmailAndPassword = async (email,password) =>
        await this.auth.signInWithEmailAndPassword(email,password)
 
    _signOut = async () => await this.auth.signOut();
